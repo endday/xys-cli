@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var PreloadWebpackPlugin = require('preload-webpack-plugin');
 var InlineManifestWebpackPlugin = require('inline-manifest-webpack-plugin');
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const pluginList = {
@@ -90,14 +91,18 @@ const pluginList = {
 			async: 'vendorasync',
 			children: true,
 			minChunks: 2
-	  	})
+		}),
+	14  : new PreloadWebpackPlugin({
+			rel: 'preload',
+			include: ['vendor','vendorasync','app','manifest','detailPage']
+		})
 };
 exports.getPlugins = function ( action ) {
 	var pluginIndex = [];
 	if( action == 'dev' ){
-		pluginIndex = [1,3,4,5,6,13,7,9];
+		pluginIndex = [1,3,4,5,6,13,7,9,14];
 	}else if( action == 'dist' ){
-		pluginIndex = [2,3,4,5,6,13,7,9,10,11];
+		pluginIndex = [2,3,4,5,6,13,7,9,14,10,11];
 	}else if( action == 'analyze' ){
 		pluginIndex = [2,5,6,13,7,9,10,11,12];
 	}
