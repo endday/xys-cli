@@ -94,7 +94,7 @@ const pluginList = {
 		}),
 	14  : new PreloadWebpackPlugin({
 			rel: 'preload',
-			include: ['vendor','vendorasync','app','manifest','detailPage']
+			include: ['vendor','vendorasync','app','manifest']
 		})
 };
 exports.getPlugins = function ( action ) {
