@@ -90,14 +90,18 @@ const pluginList = {
 			async: 'vendorasync',
 			children: true,
 			minChunks: 2
-	  	})
+		}),
+	14  : new PreloadWebpackPlugin({
+			rel: 'preload',
+			include: ['vendor','vendorasync','app','manifest']
+		})
 };
 exports.getPlugins = function ( action ) {
 	var pluginIndex = [];
 	if( action == 'dev' ){
-		pluginIndex = [1,3,4,5,6,13,7,9];
+		pluginIndex = [1,3,4,5,6,13,7,9,14];
 	}else if( action == 'dist' ){
-		pluginIndex = [2,3,4,5,6,13,7,9,10,11];
+		pluginIndex = [2,3,4,5,6,13,7,9,14,10,11];
 	}else if( action == 'analyze' ){
 		pluginIndex = [2,5,6,13,7,9,10,11,12];
 	}
