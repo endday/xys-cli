@@ -365,6 +365,19 @@ let getSex = function(value) {
         return false;
     }
 };
+let refreshTitle = function( title ){
+    if( !title ){
+        return 
+    }
+    document.title = title
+    if( typeof xysJs !== 'undefined' ){
+        xysJs.init({
+			exec:[function(){
+				window.Crossapi && Crossapi("/navigation/setTitle",{title});
+			}]
+		})
+    }
+}
 let rAF = window.requestAnimationFrame	||
 	window.webkitRequestAnimationFrame	||
 	window.mozRequestAnimationFrame		||
@@ -393,4 +406,4 @@ let copyToClipboard = str => {
 	}
 };
 console.log('global is load');
-export {rAF,wxJsConf,isWxJsReady,checkIdCard,getBirthDateByCert,getSex,getCookie,setCookie,delCookie,getParameter,request,browser,scrollFix,initShareMenu,eventType,antiClickTransparent,isMobile,isEmail,initWxAppShare};
+export {rAF,wxJsConf,isWxJsReady,checkIdCard,getBirthDateByCert,getSex,getCookie,setCookie,delCookie,getParameter,request,browser,scrollFix,initShareMenu,eventType,antiClickTransparent,isMobile,isEmail,initWxAppShare,refreshTitle};
