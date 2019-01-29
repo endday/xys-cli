@@ -1,1 +1,1 @@
-export default {};//全局actions配置
+export default {}//全局actions配置

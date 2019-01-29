@@ -7,7 +7,8 @@ import store from '../store/index'
 import './common/prototype.js'
 import '../css/common.scss'
 
-const app = new Vue({
+// eslint-disable-next-line no-new
+new Vue({
     el: '#app',
     router,
     store,

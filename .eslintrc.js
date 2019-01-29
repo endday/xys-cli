@@ -28,7 +28,6 @@ module.exports = {
         'indent': ['error', 4, {
             'SwitchCase': 1
         }],
-        'spaced-comment': 'off',
-        'linebreak-style': ['error', 'windows']
+        'spaced-comment': 'off'
     }
 }
