@@ -56,6 +56,7 @@ var baseConfig = {
     devtool: '#inline-source-map',
     module: {
         rules: [
+            createLintingRule(),
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
