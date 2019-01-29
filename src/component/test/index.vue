@@ -1,30 +1,26 @@
 <template>
-<div>{{text}}</div>
+    <div>{{text}}</div>
 </template>
 <script type="text/javascript">
 export default {
-    name: "test",
-	data(){
-		return {
-            text:"gen by xys-cli"
-		};
-	},
-    computed:{
+    name: 'test',
+    components: {},
+    data () {
+        return {
+            text: 'gen by xys-cli'
+        }
     },
-	mounted(){
-	},
-    watch:{
+    computed: {},
+    mounted () {
     },
-	methods:{
-	},
-	components:{
-	}
-};
+    watch: {},
+    methods: {}
+}
 </script>
 <style scoped lang="scss">
-    div{
-        text-align:center;
-        font-size:32px;
-        color:#8c7fee;
+    div {
+        text-align: center;
+        font-size: 32px;
+        color: #8c7fee;
     }
 </style>
