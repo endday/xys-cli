@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "dev": "node build.js npmdev",
+    "devLint": "node build.js npmdev eslint",
     "sdev": "node build.js npmsdev",
     "dist": "node build.js npmdist",
     "analyze": "node build.js analyze"
