@@ -9,6 +9,8 @@
   ],
   "scripts": {
     "dev": "node build.js npmdev",
+    "sbeta": "node build.js npmdev",
+    "sgamma": "node build.js npmdev",
     "sdev": "node build.js npmsdev",
     "dist": "node build.js npmdist",
     "analyze": "node build.js analyze"
